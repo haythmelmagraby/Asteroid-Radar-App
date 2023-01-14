@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="asteroid"
+            type="com.udacity.asteroidradar.Asteroid" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/medium_margin">
+
+    <TextView
+        android:id="@+id/code_name_id"
+        style="@style/Base.TextAppearance.AppCompat.Body1.header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        app:codenameAdapter="@{asteroid.codename}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/closeApproach_date_id"
+        style="@style/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        app:closeApproachDateAdapter="@{asteroid.closeApproachDate}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/code_name_id" />
+
+    <ImageView
+        android:id="@+id/potentially_hazardous_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:statusIcon="@{asteroid.potentiallyHazardous}"
+        app:srcCompat="@drawable/ic_status_potentially_hazardous" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
